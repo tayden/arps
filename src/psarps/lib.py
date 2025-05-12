@@ -11,7 +11,7 @@ from shapely.geometry import Point
 
 def get_acquisition_time(image_qr_path: str) -> datetime:
     """
-    Get the acquisition time a Planet Labs ARPS raster image.
+    Get the acquisition time a Planet Scope ARPS raster image.
 
     Args:
         image_path (str): Path to the raster image.
@@ -29,7 +29,14 @@ def get_acquisition_time(image_qr_path: str) -> datetime:
         for si in scene_ids:
             m = ts_pattern.match(si)
             if m is not None:
-                dt = datetime(*map(int, m.groups()))
+                dt = datetime(
+                    year=int(m.group(1)),
+                    month=int(m.group(2)),
+                    day=int(m.group(3)),
+                    hour=int(m.group(4)),
+                    minute=int(m.group(5)),
+                    second=int(m.group(6)),
+                )
                 dts.append(dt)
 
         if not len(dts):
@@ -43,7 +50,7 @@ def get_acquisition_time(image_qr_path: str) -> datetime:
 
 def get_raster_center(image_qr_path: str) -> Point:
     """
-    Get the center of a Planet Labs ARPS raster image.
+    Get the center of a Planet Scope ARPS raster image.
 
     Args:
         image_path (str): Path to the raster image.
@@ -80,7 +87,7 @@ def get_tide_stations() -> list[dict[str, Any]]:
 
 def get_closest_tide_station(image_qr_path: str) -> dict[str, Any]:
     """
-    Get the closest tide station to a Planet Labs ARPS raster image.
+    Get the closest tide station to a Planet Scope ARPS raster image.
     :param image_qr_path:
     :return:
     """
@@ -102,7 +109,7 @@ def get_closest_tide_station(image_qr_path: str) -> dict[str, Any]:
 
 def get_tide_height(image_qr_path: str) -> dict[str, Any]:
     """
-    Get the tide height at the time of acquisition of a Planet Labs ARPS raster image.
+    Get the tide height at the time of acquisition of a Planet Scope ARPS raster image.
 
     Args:
         image_path (str): Path to the raster image.

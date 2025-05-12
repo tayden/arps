@@ -1,5 +1,5 @@
 [project]
-name = "ARPS"
+name = "PSARPS"
 version = "0.1.0"
 description = "Get metadata about Planet Scope ARPS satellite imagery"
 readme = "README.md"
@@ -21,7 +21,8 @@ dev = [
 ]
 
 [project.scripts]
-arps = "cli:app"
+psarps = "psarps.__main__:app"
 
-[tool.uv]
-package = true
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

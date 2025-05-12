@@ -4,9 +4,10 @@ from datetime import datetime
 import numpy as np
 import pytest
 import rasterio
+from rasterio import transform, profiles
 from shapely import Point
 
-from lib import (
+from psarps import (
     get_acquisition_time,
     get_closest_tide_station,
     get_raster_center,
@@ -17,7 +18,7 @@ from lib import (
 
 @pytest.fixture
 def mock_planet_qa_raster():
-    profile = rasterio.profiles.default_gtiff_profile
+    profile = profiles.default_gtiff_profile  # ty: ignore[unresolved-attribute]
     profile.update(
         {
             "count": 1,
@@ -25,7 +26,7 @@ def mock_planet_qa_raster():
             "height": 10,
             "dtype": "uint8",
             "crs": "EPSG:32609",
-            "transform": rasterio.transform.from_bounds(
+            "transform": transform.from_bounds(  # ty: ignore[unresolved-attribute]
                 west=576000.0,
                 south=5712000.0,
                 east=600000.0,

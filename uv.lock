@@ -12,41 +12,6 @@ wheels = [
 ]
 
 [[package]]
-name = "arps"
-version = "0.1.0"
-source = { editable = "." }
-dependencies = [
-    { name = "cyclopts" },
-    { name = "geopy" },
-    { name = "proj" },
-    { name = "pyproj" },
-    { name = "rasterio" },
-    { name = "requests" },
-    { name = "rich" },
-    { name = "shapely" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "pytest" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "cyclopts", specifier = ">=3.16.0" },
-    { name = "geopy", specifier = ">=2.4.1" },
-    { name = "proj", specifier = ">=0.2.0" },
-    { name = "pyproj", specifier = ">=3.7.1" },
-    { name = "rasterio", specifier = ">=1.4.3" },
-    { name = "requests", specifier = ">=2.32.3" },
-    { name = "rich", specifier = ">=14.0.0" },
-    { name = "shapely", specifier = ">=2.1.0" },
-]
-
-[package.metadata.requires-dev]
-dev = [{ name = "pytest", specifier = ">=8.3.5" }]
-
-[[package]]
 name = "arrow"
 version = "1.3.0"
 source = { registry = "https://pypi.org/simple" }
@@ -295,6 +260,41 @@ sdist = { url = "https://files.pythonhosted.org/packages/a0/2b/70459cdba0d97758e
 wheels = [
     { url = "https://files.pythonhosted.org/packages/87/d7/032c1f29b50e8d970cde7dc25d9231a4b26747be2a0b8b5f3ab20f9d5c42/proj-0.2.0-py2.py3-none-any.whl", hash = "sha256:350b8f46d49e1a5080bb6dff61f8a18c11e81caf2ae0a3ede04e293c9cb891db", size = 8619 },
 ]
+
+[[package]]
+name = "psarps"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "cyclopts" },
+    { name = "geopy" },
+    { name = "proj" },
+    { name = "pyproj" },
+    { name = "rasterio" },
+    { name = "requests" },
+    { name = "rich" },
+    { name = "shapely" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "pytest" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "cyclopts", specifier = ">=3.16.0" },
+    { name = "geopy", specifier = ">=2.4.1" },
+    { name = "proj", specifier = ">=0.2.0" },
+    { name = "pyproj", specifier = ">=3.7.1" },
+    { name = "rasterio", specifier = ">=1.4.3" },
+    { name = "requests", specifier = ">=2.32.3" },
+    { name = "rich", specifier = ">=14.0.0" },
+    { name = "shapely", specifier = ">=2.1.0" },
+]
+
+[package.metadata.requires-dev]
+dev = [{ name = "pytest", specifier = ">=8.3.5" }]
 
 [[package]]
 name = "pygments"
