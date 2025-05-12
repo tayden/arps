@@ -1,0 +1,27 @@
+[project]
+name = "ARPS"
+version = "0.1.0"
+description = "Get metadata about Planet Scope ARPS satellite imagery"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "cyclopts>=3.16.0",
+    "geopy>=2.4.1",
+    "proj>=0.2.0",
+    "pyproj>=3.7.1",
+    "rasterio>=1.4.3",
+    "requests>=2.32.3",
+    "rich>=14.0.0",
+    "shapely>=2.1.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+]
+
+[project.scripts]
+arps = "cli:app"
+
+[tool.uv]
+package = true
