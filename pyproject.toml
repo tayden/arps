@@ -1,6 +1,6 @@
 [project]
 name = "PSARPS"
-version = "0.1.2"
+version = "0.0.0"
 description = "Get metadata about Planet Scope ARPS satellite imagery"
 readme = "README.md"
 requires-python = ">=3.10"
