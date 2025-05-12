@@ -1,9 +1,9 @@
 [project]
 name = "PSARPS"
-version = "0.1.1"
+version = "0.1.2"
 description = "Get metadata about Planet Scope ARPS satellite imagery"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.10"
 dependencies = [
     "cyclopts>=3.16.0",
     "geopy>=2.4.1",
